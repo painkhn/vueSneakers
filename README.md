@@ -1,4 +1,1 @@
-RUN:
-~~
-npm run dev
-~~
+RUN: npm run dev
