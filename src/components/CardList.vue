@@ -1,9 +1,11 @@
 <script setup>
-    import Card from './Card.vue'
+import Card from './Card.vue'
 
-    defineProps({
-        items: Array
-    })
+defineProps({
+    items: Array
+})
+
+
 </script>
 
 <template>
@@ -11,6 +13,7 @@
         <Card 
             v-for="item in items"
             :key="item.id"
+            :id="item.id"
             :image-url="item.imageUrl" 
             :title="item.name" 
             :price="item.price" 
