@@ -1,5 +1,4 @@
 <script setup>
-import { inject } from 'vue'
 
 const props = defineProps({
     id: Number,
@@ -9,21 +8,9 @@ const props = defineProps({
     isFavorite: Boolean,
     isAdded: Boolean,
     onClickFavorite: Function,
+    onClickAdd: Function,
 })
 
-const onClickAdd = () => {
-    alert('added')
-}
-
-const addToFavorite = inject('addToFavorite')
-
-const onClickFavorite = () => {
-    const obj = {
-        parentId: props.id,
-    }
-
-    addToFavorite()
-}
 </script>
 
 <template>
@@ -38,7 +25,7 @@ const onClickFavorite = () => {
                 <span class="font-bold">{{ price }}₽</span>
             </div>
 
-            <img @click="onClickAdd" :src="!isAdded ? '/img/plus.svg' : '/img/btn-checked.svg' " alt="add" />
+            <img @click="onClickAdd" :src="!isAdded ? '/img/btn-plus.svg' : '/img/btn-checked.svg' " alt="add" />
         </div>
     </div>
 </template>
