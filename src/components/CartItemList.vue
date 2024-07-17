@@ -7,7 +7,7 @@
 </script>
 
 <template>
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4" v-auto-animate>
         <CartItem v-for="item in cart" :key="item.id" :title="item.name" :price="item.price" :image-url="item.imageUrl" @on-click-remove="() => removeFromCart(item)" />
     </div>
 </template>
